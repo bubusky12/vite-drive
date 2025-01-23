@@ -32,8 +32,8 @@ const LoginPage: React.FC = () => {
         setIsLoading(false);
         navigate("/dashboard");
         setTimeout(() => {
-          window.location.reload(); // Paksa refresh halaman
-        }, 100); // Beri jeda untuk memastikan navigasi selesai
+          window.location.reload();
+        }, 100);
       }, 500);
     } else {
       setIsLoading(false);

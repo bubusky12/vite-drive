@@ -14,15 +14,14 @@ interface UserSession {
 
 const Dashboard: React.FC = () => {
   const [session, setSession] = useState<UserSession | null>(null);
-  const [loading, setLoading] = useState(true); // Tambahkan state loading
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/login"); // Redirect ke login jika token tidak ada
+      navigate("/login");
     } else {
-      // Simulasi pengambilan data sesi
       setSession({
         user: {
           name: "John Doe",
@@ -30,7 +29,7 @@ const Dashboard: React.FC = () => {
         },
       });
     }
-    setLoading(false); // Set loading selesai
+    setLoading(false);
   }, [navigate]);
 
   if (loading) {
